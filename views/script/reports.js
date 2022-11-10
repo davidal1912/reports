@@ -14,7 +14,18 @@ const upload_data = () =>{
          processData: false,
          contentType: false,
          success:(rps)=>{
-             console.log(rps);
+
+            let datos = JSON.parse(rps);
+            if (datos.status){
+                
+                swal("Atención", datos.msg, "success");
+
+            } 
+            else {
+                swal ("Atención", datos.msg, "success");
+            };
+            
+             
          }
     });
 }
